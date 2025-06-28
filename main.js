@@ -1,3 +1,5 @@
+document.getElementById('refresh').addEventListener('click', fetchContacts)
+
 function fetchContacts(){
     fetch(rootPath + "controller/get-contacts/")
     .then(function(response){
