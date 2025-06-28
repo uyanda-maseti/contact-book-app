@@ -44,10 +44,14 @@ function submitForm(e){
     .then(function(data){
         if(data === '1'){
             alert('Contact added.')
-            // link to home page
+            homeLink()
         }else{
             alert(data)
-            // link to home page
+            homeLink()
         }
     })
+}
+
+function homeLink(){
+    window.open('index.html', '_self')
 }
