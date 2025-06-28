@@ -26,3 +26,28 @@ function displayOutput(data){
     output += '</table>'
     document.getElementById('table').innerHTML = output
 }
+
+function submitForm(e){
+    e.preventDefault()
+
+    const form = new FormData(document.querySelector('#editForm'))
+    form.append('apiKey', apiKey)
+
+    fetch(rootPath + 'controller/insert-contact', {
+        method: 'POST',
+        headers: {'Accept': 'application/json, *.*'},
+        body: form
+    })
+    .then(function(response){
+        return response.text()
+    })
+    .then(function(data){
+        if(data === '1'){
+            alert('Contact added.')
+            // link to home page
+        }else{
+            alert(data)
+            // link to home page
+        }
+    })
+}
