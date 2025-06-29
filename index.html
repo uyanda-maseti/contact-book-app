@@ -3,10 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
         <title>Contact Book App</title>
     </head>
     <body onload="fetchContacts()">
-        
+        <div class="container">
+            <div class="header">
+                <h1>Contact Book</h1>
+                <p>Manage your contacts with our simple API-powered app.</p>
+            </div>
+            <div class="content">
+                <div id="setupPage" class="page active">
+                    <div class="api-setup">
+                        <h3>API Setup Required</h3>
+                        <p>Before you use the contact book, please enter your api key below. If you don't have one you can use: 
+                            <strong>appacademy@itvarsity.org</strong>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label for="apiKeyInput">Enter your API Key (Email address)</label>
+                        <input type="email" id="apiKey" placeholder="your-email@example.com">
+                    </div>
+                    <button class="btn" onclick="setupApiKey()">Start using contact book</button>
+                </div>
+            </div>
+        </div>
         <div id="table">Contacts loading...</div>
         <button id="refresh" type="button">Refresh</button>
         <button id="addContact" type="button">Add Contact</button>
